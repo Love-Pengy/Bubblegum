@@ -9,7 +9,7 @@ source "servers.sh"
 
 UHOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 echo $UHOME
-install="apt-get install -y -qq"
+install="pacman -S --noconfirm"
 
 # ####################### #
 # Important Starting Deps # 
@@ -25,7 +25,7 @@ fi
 # Setup # 
 # ##### #
 
-apt-get update -qq && apt-get upgrade -y -qq 
+pacman -Syu 
 
 # My Preferred Folders
 mkdir -p $UHOME/Applications $UHOME/Projects $UHOME/Documents $UHOME/Videos \

@@ -37,6 +37,7 @@ programs=(
   "manpages-dev" 
   "manpages-posix-dev" 
   "ffmpeg" 
+  "curl"
 
   ##########
   # Extras #
