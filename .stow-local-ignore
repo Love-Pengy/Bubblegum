@@ -1,0 +1,12 @@
+^/README.*
+^/LICENSE.*
+
+\.git
+\.gitignore
+\.gitmodules
+
+/externalScripts
+/assets
+
+/install.sh
+/progs.md

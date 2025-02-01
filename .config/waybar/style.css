@@ -1,0 +1,130 @@
+/*https://github.com/brunoanesio/waybar-config/tree/main?tab=readme-ov-file*/
+@import 'waybarColors.css'; 
+* {
+  min-height: 0;
+  font-family:  "HackNerdFontPropo";
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+window#waybar {
+  background-color: @background;  
+}
+
+/*
+window#waybar.hidden {
+  opacity: 0.5;
+}
+*/
+
+#workspaces {
+  background-color: transparent;
+}
+
+#workspaces button {
+  color: @foreground;
+	padding-top: 1.5px;
+	padding-bottom: 1.5px;
+}
+
+/*
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  color: #1e1e2e;
+}
+*/
+
+/*
+#workspaces button.active {
+  color: #1e1e2e;
+  background-color: #89b4fa;
+}
+*/
+#workspaces button.focused{
+  color: @color14; /*#1e1e2e;*/
+  background-color: @background; 
+  transition: all .4s ease-in-out;
+}
+
+#workspaces button.urgent {
+  background-color: #f38ba8;
+}
+
+#clock,
+#pulseaudio,
+#custom-logo,
+#custom-power,
+#network, 
+#cpu,
+#tray,
+#memory, 
+#battery, 
+#window {
+  min-height: 0;
+  padding: 2px 10px;
+  border-radius: 4px;
+  margin: 4px 4px;
+  color: @color15;
+  background-color: @infoBG;
+  /* background-color: #181825; */
+}
+
+#custom-sep {
+  padding: 0px;
+  color: #585b70;
+}
+/*
+#custom-spotify.playing {
+  color: #a6e3a1;
+}
+
+#custom-spotify.liked {
+  color: #cba6f7;
+}
+#custom-spotify.added {
+  color: #f9e2af;
+}
+
+#custom-spotify.removed {
+  color: #f38ba8;
+}
+
+#custom-spotify.paused {
+  color: #9399b2;
+}
+*/
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#network.disconnected{
+  color: #FF0000;
+}
+
+#battery.warning{ 
+	color: #FFA500;
+}
+
+#battery.critical{
+  color: #FF0000;
+}
+
+/*
+#custom-logo {
+  color: #89b4fa;
+  background-color: @color15;
+}
+*/
+
+tooltip {
+  background-color: @background;
+  border-radius: 8px;
+	border-width: 3px;
+	border-style: solid;
+	border-color: @color9;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
