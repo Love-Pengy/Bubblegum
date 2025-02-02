@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 # Programs needed for the entire system
 programs=(
@@ -6,20 +6,13 @@ programs=(
   # Core #
   ########
 
-  "sway" 
+  "hyprland" 
   # NOTE: should come from pulseaudio 
   # "pactl" 
-  "brightnessctl" 
-  "grimshot" 
-  "swayidle"  
-  "swaylock" 
-  "wl-clipboard" 
+  "wl-clipboard"
   "pipewire" 
   "pipewire-pulse" 
-  "wlogout" 
-  "dunst" 
-  "tofi" 
-  "waybar" 
+  # "tofi" 
   "kitty" 
   "hyfetch" 
 
@@ -28,14 +21,14 @@ programs=(
   #########
 
   "stow" 
-  "samba-client" 
+  "samba" 
   "cifs-utils" 
   "firefox" 
   "tree" 
   "btop" 
   "ncdu" 
-  "manpages-dev" 
-  "manpages-posix-dev" 
+  # "manpages-dev" 
+  # "manpages-posix-dev" 
   "ffmpeg" 
   "curl"
 
@@ -45,8 +38,8 @@ programs=(
 
   "vlc" 
   "yt-dlp" 
-  "network-manager" 
-  "xdg-desktop-portal-wlr" 
+  # "network-manager" 
+  "xdg-desktop-portal-hyprland" 
   "v4l2loopback-dkms" 
   
   ###############
@@ -58,7 +51,7 @@ programs=(
   "valgrind" 
   "gdb" 
   "ripgrep" 
-  "fd-find" 
+  "fd" 
   "neovim"  
   "make" 
   "cmake" 

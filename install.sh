@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #debug 
-# set -x 
+set -x 
 
 #Include 
 source "progs.sh"
@@ -25,7 +25,13 @@ fi
 # Setup # 
 # ##### #
 
-pacman -Syu 
+pacman -Syu --noconfirm
+$install python-pip
+
+# install yay | requires manual password input 
+pacman -S --needed git base-devel 
+sudo -u $SUDO_USER bash -c 'git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si'
+pwd
 
 # My Preferred Folders
 mkdir -p $UHOME/Applications $UHOME/Projects $UHOME/Documents $UHOME/Videos \
@@ -45,18 +51,14 @@ for package in ${programs[@]}; do
 done 
 
 # Install Local Send
-curl -s https://api.github.com/repos/localsend/localsend/releases/latest | grep "browser_download_url.*linux-x86-64.deb" | cut -d : -f 2,3 | tr -d \" | wget -qi -
-$install ./LocalSend-*-linux-x86-64.deb
-rm LocalSend-*-linux-x86-64.deb
+yay -S --noconfirm localsend 
 
 # Install OBS
-add-apt-repository ppa:obsproject/obs-studio
-apt update
 $install obs-studio
 
 
 ## Install Rust |  requires user input
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # Install cargo 
 $install cargo 
@@ -73,19 +75,17 @@ rm -rf ./ryanoasis-nerd-fonts-*
 # PxPlus font
 git clone https://github.com/Love-Pengy/PxPlus_IBM_VGA8_Nerd.git
 mv ./PxPlus_IBM_VGA8_Nerd/PxPlusIBMVGA8NerdFont-Regular.ttf $UHOME/.local/share/fonts 
-rm -rf PxPlus_IBM_VGA8_Nerd/PxPlusIBMVGANerd
+rm -rf PxPlus_IBM_VGA8_Nerd
 
 # obsidian
-flatpak install md.obsidian.Obsidian/x86_64/stable
+flatpak install -y md.obsidian.Obsidian/x86_64/stable
 
 # vesktop
-curl -s https://api.github.com/repos/Vencord/Vesktop/releases/latest | grep "browser_download_url.*amd64.deb" | cut -d : -f 2,3 | tr -d \" | wget -qi -
-$install ./vesktop_*_amd64.deb
-rm vesktop_*_amd64.deb
+yay -S -noconfirm vesktop
 
 # qmk
-python3 -m pip install --user qmk 
-qmk setup -H ~/Projects/qmk_firmware
+$install qmk
+qmk setup -y -H $UHOME/Projects/qmk_firmware
 
 exit 1
 # ############# #
@@ -99,7 +99,7 @@ stow .
 usermod -aG video ${USER} 
 
 # Make random_bg script executable
-chmod +x ~/.config/sway/random_bg
+chmod +x $UHOME/.config/sway/random_bg
 
 # install neovim servers
 for server in ${servers[@]}; do 
