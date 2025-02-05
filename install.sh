@@ -1,7 +1,10 @@
 #!/bin/bash
 
 #debug 
-set -x 
+# set -x 
+
+# fail on error
+set -e
 
 #Include 
 source "progs.sh"
@@ -27,7 +30,6 @@ fi
 # Setup # 
 # ##### #
 
-: << END
 pacman -Syu --noconfirm -q
 
 # install yay | requires manual password input 
@@ -51,7 +53,7 @@ for package in ${programs[@]}; do
 done 
 
 # Install Local Send
-yay -S --noconfirm localsend 
+$nonRoot yay -S --noconfirm localsend 
 
 # Install OBS
 $install obs-studio
@@ -62,8 +64,6 @@ $nonRoot curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # Install cargo 
 $install cargo 
-
-END
 
 # nerdfonts
 $nonRootBash "\
