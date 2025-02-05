@@ -9,8 +9,9 @@ source "servers.sh"
 
 UHOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 echo $UHOME
-nonRoot="sudo -u $SUDO_USER bash -c"
-install="pacman -S --noconfirm"
+nonRootBash="sudo -u $SUDO_USER bash -c"
+nonRoot="sudo -u $SUDO_USER"
+install="pacman -S --noconfirm -q"
 
 # ####################### #
 # Important Starting Deps # 
@@ -26,11 +27,12 @@ fi
 # Setup # 
 # ##### #
 
-pacman -Syu --noconfirm
+: << END
+pacman -Syu --noconfirm -q
 
 # install yay | requires manual password input 
 pacman -S --needed git base-devel 
-$nonRoot 'cd && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si'
+$nonRootBash 'cd && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si'
 
 # My Preferred Folders
 $nonRoot mkdir -p $UHOME/Applications $UHOME/Projects $UHOME/Documents $UHOME/Videos \
@@ -61,6 +63,8 @@ $nonRoot curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # Install cargo 
 $install cargo 
 
+END
+
 # nerdfonts
 $nonRoot "\
 curl https://api.github.com/repos/ryanoasis/nerd-fonts/tags | grep "tarball_url" | grep -Eo 'https://[^\"]*' | sed  -n '1p' | xargs wget -O - | tar -xz\
@@ -89,8 +93,9 @@ $nonRoot qmk setup -y -H $UHOME/Projects/qmk_firmware
 # ############# #
 
 # Move dotfiles to their respective places, adopts existing files then overrides them to what they should be 
-$nonRoot stow .
-$nonRoot git restore .
+# NOTE: ignore this for now as I know it works and don't wanna reset until script is done
+# $nonRoot stow .
+# $nonRoot git restore .
 
 # Make random_bg script executable
 chmod +x $UHOME/.config/sway/random_bg
