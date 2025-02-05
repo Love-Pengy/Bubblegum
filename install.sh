@@ -73,9 +73,8 @@ find ./ryanoasis-nerd-fonts-* -name '*.ttf' -exec mv {} `$UHOME/.local/share/fon
 rm -rf ./ryanoasis-nerd-fonts-*
 
 # PxPlus font
-$nonRoot "\ 
-git clone https://github.com/Love-Pengy/PxPlus_IBM_VGA8_Nerd.git\
-mv ./PxPlus_IBM_VGA8_Nerd/PxPlusIBMVGA8NerdFont-Regular.ttf $UHOME/.local/share/fonts\ 
+$nonRootBash "git clone https://github.com/Love-Pengy/PxPlus_IBM_VGA8_Nerd.git"
+$nonRoot mv ./PxPlus_IBM_VGA8_Nerd/PxPlusIBMVGA8NerdFont-Regular.ttf $UHOME/.local/share/fonts 
 rm -rf PxPlus_IBM_VGA8_Nerd"
 
 # obsidian
