@@ -58,9 +58,8 @@ $nonRoot yay -S --noconfirm localsend
 # Install OBS
 $install obs-studio
 
-
-## Install Rust |  requires user input
-$nonRoot curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+## Install Rust 
+$install rustup
 
 # Install cargo 
 $install cargo 
