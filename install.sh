@@ -55,17 +55,15 @@ for package in ${programs[@]}; do
   fi 
 done 
 
+# setup rustup 
+$nonRoot rustup toolchain install stable
+$nonRoot rustup default stable
+
 # Install Local Send
 $nonRoot yay -S --noconfirm localsend 
 
 # Install OBS
 $install obs-studio
-
-## Install Rust 
-$install rustup
-
-# Install cargo 
-$install cargo 
 
 # nerdfonts
 $nonRootBash "\
@@ -105,4 +103,6 @@ chmod +x $UHOME/.config/sway/random_bg
 for server in ${servers[@]}; do 
   $nonRoot nvim --headless  +'MasonInstall $package' +qa
 done 
+
+
 
