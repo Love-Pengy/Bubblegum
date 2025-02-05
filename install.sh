@@ -40,6 +40,9 @@ $nonRootBash 'cd && git clone https://aur.archlinux.org/yay.git && cd yay && mak
 $nonRoot mkdir -p $UHOME/Applications $UHOME/Projects $UHOME/Documents $UHOME/Videos \
          $UHOME/Downloads 
 
+# Ensure no conflicts between rust and rustup
+pacman --remove --noconfirm rust
+
 # ################ #
 # Package Download #
 # ################ #
