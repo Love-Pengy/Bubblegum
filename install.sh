@@ -81,7 +81,7 @@ rm -rf PxPlus_IBM_VGA8_Nerd"
 flatpak install -y md.obsidian.Obsidian/x86_64/stable
 
 # vesktop
-yay -S -noconfirm vesktop
+$nonRoot yay -S --noconfirm vesktop
 
 # qmk
 $install qmk
