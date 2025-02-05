@@ -40,9 +40,6 @@ $nonRootBash 'cd && git clone https://aur.archlinux.org/yay.git && cd yay && mak
 $nonRoot mkdir -p $UHOME/Applications $UHOME/Projects $UHOME/Documents $UHOME/Videos \
          $UHOME/Downloads 
 
-# Ensure no conflicts between rust and rustup
-pacman --remove --noconfirm rust
-
 # ################ #
 # Package Download #
 # ################ #
@@ -55,12 +52,16 @@ for package in ${programs[@]}; do
   fi 
 done 
 
-# setup rustup 
-$nonRoot rustup toolchain install stable
-$nonRoot rustup default stable
+
+# Ensure no conflicts between rust and rustup
+pacman -R --noconfirm rust
 
 # Install Local Send
 $nonRoot yay -S --noconfirm localsend 
+
+# setup rustup 
+$nonRoot rustup toolchain install stable
+$nonRoot rustup default stable
 
 # Install OBS
 $install obs-studio

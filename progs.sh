@@ -27,8 +27,6 @@ programs=(
   "tree" 
   "btop" 
   "ncdu" 
-  # "manpages-dev" 
-  # "manpages-posix-dev" 
   "ffmpeg" 
   "curl"
 
@@ -38,7 +36,6 @@ programs=(
 
   "vlc" 
   "yt-dlp" 
-  # "network-manager" 
   "xdg-desktop-portal-hyprland" 
   "v4l2loopback-dkms" 
   
