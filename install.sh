@@ -65,7 +65,7 @@ rm -rf ./ryanoasis-nerd-fonts-*
 # PxPlus font
 $nonRootBash "git clone https://github.com/Love-Pengy/PxPlus_IBM_VGA8_Nerd.git"
 $nonRoot mv ./PxPlus_IBM_VGA8_Nerd/PxPlusIBMVGA8NerdFont-Regular.ttf $UHOME/.local/share/fonts 
-rm -rf PxPlus_IBM_VGA8_Nerd"
+rm -rf PxPlus_IBM_VGA8_Nerd
 
 # obsidian
 flatpak install -y md.obsidian.Obsidian/x86_64/stable
@@ -85,9 +85,6 @@ $nonRoot qmk setup -y -H $UHOME/Projects/qmk_firmware
 # NOTE: ignore this for now as I know it works and don't wanna reset until script is done
 # $nonRoot stow .
 # $nonRoot git restore .
-
-# Make random_bg script executable
-chmod +x $UHOME/.config/sway/random_bg
 
 # install neovim servers
 for server in ${servers[@]}; do 

@@ -7,14 +7,13 @@ programs=(
   ########
 
   "hyprland" 
-  # NOTE: should come from pulseaudio 
-  # "pactl" 
   "wl-clipboard"
   "pipewire" 
   "pipewire-pulse" 
   # "tofi" 
   "kitty" 
   "hyfetch" 
+  "flatpak"  
 
   #########
   # Utils #
@@ -52,5 +51,5 @@ programs=(
   "neovim"  
   "make" 
   "cmake" 
-  "flatpak"  
+
   )
