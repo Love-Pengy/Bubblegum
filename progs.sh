@@ -53,5 +53,4 @@ programs=(
   "make" 
   "cmake" 
   "flatpak"  
-  "rustup"
   )

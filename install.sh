@@ -53,15 +53,9 @@ for package in ${programs[@]}; do
 done 
 
 
-# Ensure no conflicts between rust and rustup
-pacman -R --noconfirm rust
 
 # Install Local Send
 $nonRoot yay -S --noconfirm localsend 
-
-# setup rustup 
-$nonRoot rustup toolchain install stable
-$nonRoot rustup default stable
 
 # Install OBS
 $install obs-studio
