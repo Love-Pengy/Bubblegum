@@ -29,6 +29,7 @@ programs=(
   "ncdu" 
   "ffmpeg" 
   "curl"
+  "obs-studio"
 
   ##########
   # Extras #

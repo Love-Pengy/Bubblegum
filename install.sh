@@ -52,19 +52,14 @@ for package in ${programs[@]}; do
   fi 
 done 
 
-
-
 # Install Local Send
 $nonRoot yay -S --noconfirm localsend 
-
-# Install OBS
-$install obs-studio
 
 # nerdfonts
 $nonRootBash "\
 curl https://api.github.com/repos/ryanoasis/nerd-fonts/tags | grep "tarball_url" | grep -Eo 'https://[^\"]*' | sed  -n '1p' | xargs wget -O - | tar -xz && \
 mkdir -p $UHOME/.local/share/fonts && \
-find ./ryanoasis-nerd-fonts-* -name '*.ttf' -exec mv {} `$UHOME/.local/share/fonts` \;" 
+find ./ryanoasis-nerd-fonts-* -name '*.ttf' -exec mv {} '$UHOME/.local/share/fonts' \;" 
 rm -rf ./ryanoasis-nerd-fonts-*
 
 # PxPlus font
