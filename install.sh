@@ -83,12 +83,12 @@ $nonRoot qmk setup -y -H $UHOME/Projects/qmk_firmware
 
 # Move dotfiles to their respective places, adopts existing files then overrides them to what they should be 
 # NOTE: ignore this for now as I know it works and don't wanna reset until script is done
-# $nonRoot stow .
-# $nonRoot git restore .
+$nonRoot stow . --adopt
+$nonRoot git restore .
 
 # install neovim servers
 for server in ${servers[@]}; do 
-  $nonRoot nvim --headless  +'MasonInstall $package' +qa
+  $nonRoot nvim --headless  +"MasonInstall $server" +qa
 done 
 
 
