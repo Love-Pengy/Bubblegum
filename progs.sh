@@ -51,5 +51,6 @@ programs=(
   "neovim"  
   "make" 
   "cmake" 
+  "npm"
 
   )
