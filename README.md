@@ -9,5 +9,9 @@ Configuration Files For My "Productivity" Boot Of My Desktop PC, Princess Bubble
 
 ### Installation 
 
-+ clone with submodules in home dir `git clone --recurse-submodules https://github.com/Love-Pengy/Bubblegum.git` 
++ clone repo `git clone https://github.com/Love-Pengy/Bubblegum.git` 
 + run script in home directory with sudo privaledges `sudo -H ./install.sh`
+
+### Ref
+
++ Much of the config derived from: https://github.com/gaurav210233/simple-hyprland

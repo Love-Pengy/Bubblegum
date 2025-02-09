@@ -55,6 +55,9 @@ done
 # Install Local Send
 $nonRoot yay -S --noconfirm localsend 
 
+# Install tofi
+$nonRoot yay -S --noconfirm tofi
+
 # nerdfonts
 $nonRootBash "\
 curl https://api.github.com/repos/ryanoasis/nerd-fonts/tags | grep "tarball_url" | grep -Eo 'https://[^\"]*' | sed  -n '1p' | xargs wget -O - | tar -xz && \

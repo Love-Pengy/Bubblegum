@@ -1,130 +1,119 @@
-/*https://github.com/brunoanesio/waybar-config/tree/main?tab=readme-ov-file*/
-@import 'waybarColors.css'; 
 * {
-  min-height: 0;
-  font-family:  "HackNerdFontPropo";
-  font-size: 16px;
-  font-weight: 600;
+    border: none;
+    border-radius: 0;
+    font-family: JetBrainsMono Nerd Font, monospace;
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
 }
-
 
 window#waybar {
-  background-color: @background;  
-}
-
-/*
-window#waybar.hidden {
-  opacity: 0.5;
-}
-*/
-
-#workspaces {
-  background-color: transparent;
+    background: rgba(21, 18, 27, 0);
+    color: #cdd6f4;
 }
 
 #workspaces button {
-  color: @foreground;
-	padding-top: 1.5px;
-	padding-bottom: 1.5px;
+    padding: 5px;
+    color: #555869;
+    margin-right: 5px;
 }
 
-/*
-#workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-  color: #1e1e2e;
-}
-*/
-
-/*
 #workspaces button.active {
-  color: #1e1e2e;
-  background-color: #89b4fa;
+    color: #a6adc8;
 }
-*/
-#workspaces button.focused{
-  color: @color14; /*#1e1e2e;*/
-  background-color: @background; 
-  transition: all .4s ease-in-out;
+
+#workspaces button.focused {
+    color: #a6adc8;
+    background: #eba0ac;
+    border-radius: 10px;
 }
 
 #workspaces button.urgent {
-  background-color: #f38ba8;
+    color: #11111b;
+    background: #a6e3a1;
+    border-radius: 10px;
 }
 
+#workspaces button:hover {
+    background: #cdd6f4;
+    color: #11111b; 
+    border-radius: 10px;
+}
+
+#window,
 #clock,
 #pulseaudio,
-#custom-logo,
-#custom-power,
-#network, 
+#network,
 #cpu,
-#tray,
-#memory, 
-#battery, 
+#custom-gpu_usage,
+#memory,
+#workspaces,
+#tray{
+    background: #1e1e2e;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    margin-top: 5px;
+    /* border: 1px solid #181825; */
+}
+
+
+#tray {
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+#workspaces {
+    background: #1e1e2e;
+    border-radius: 10px;
+    margin-left: 10px;
+    padding-right: 0px;
+    padding-left: 5px;
+}
+
+#cpu {
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#custom-gpu_usage{
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 10px;
+}
+
+#memory {
+    border-radius: 10px 0px 0px 10px;
+}
+
 #window {
-  min-height: 0;
-  padding: 2px 10px;
-  border-radius: 4px;
-  margin: 4px 4px;
-  color: @color15;
-  background-color: @infoBG;
-  /* background-color: #181825; */
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
-#custom-sep {
-  padding: 0px;
-  color: #585b70;
-}
-/*
-#custom-spotify.playing {
-  color: #a6e3a1;
+#clock {
+    color: #a6adc8;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 5px;
+    border-right: 0px;
 }
 
-#custom-spotify.liked {
-  color: #cba6f7;
-}
-#custom-spotify.added {
-  color: #f9e2af;
+#network {
+    color:  #a6adc8;
+    border-radius: 10px 0px 0px 10px;
+
 }
 
-#custom-spotify.removed {
-  color: #f38ba8;
+#pulseaudio {
+    color: #a6adc8;
+    border-left: 0px;
+    border-right: 0px;
 }
 
-#custom-spotify.paused {
-  color: #9399b2;
-}
-*/
-
-window#waybar.empty #window {
-  background-color: transparent;
-}
-
-#network.disconnected{
-  color: #FF0000;
+#pulseaudio.microphone {
+    color: #a6adc8;
+    border-radius: 0px 10px 10px 0px;
+    border-left: 0px;
+    border-right: 0px;
+    margin-right: 5px;
 }
 
-#battery.warning{ 
-	color: #FFA500;
-}
-
-#battery.critical{
-  color: #FF0000;
-}
-
-/*
-#custom-logo {
-  color: #89b4fa;
-  background-color: @color15;
-}
-*/
-
-tooltip {
-  background-color: @background;
-  border-radius: 8px;
-	border-width: 3px;
-	border-style: solid;
-	border-color: @color9;
-	padding-top: 3px;
-	padding-bottom: 3px;
-}

@@ -7,10 +7,13 @@ programs=(
   ########
 
   "hyprland" 
+  "playerctl" 
+  "wpctl"
+  "waybar"
+  "dunst"
   "wl-clipboard"
   "pipewire" 
   "pipewire-pulse" 
-  # "tofi" 
   "kitty" 
   "hyfetch" 
   "flatpak"  
@@ -29,6 +32,7 @@ programs=(
   "ffmpeg" 
   "curl"
   "obs-studio"
+  "dolphin"
 
   ##########
   # Extras #

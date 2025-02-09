@@ -78,10 +78,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
     alias dir='dir --color=auto'
     alias grep='grep --color=auto'
-
-    #alias vdir='vdir --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
@@ -120,12 +116,5 @@ bind '"\e[Z":menu-complete-backward'
 # do partial completion on the first tab cycle after that 
 bind "set menu-complete-display-prefix on"
 
-# for java white screen thingy 
-export _JAVA_AWT_WM_NONREPARENTING=1
-. "$HOME/.cargo/env"
-
-# add path for neovim
-export PATH="$PATH:/opt/nvim-linux64/bin"
-
 # change sudo -e editor to nvim
-export EDITOR="/opt/nvim-linux64/bin/nvim"
+export EDITOR="/usr/bin/nvim"
