@@ -7,6 +7,8 @@ programs=(
   ########
 
   "hyprland" 
+  "hyprlock"
+  "hypridle"
   "playerctl" 
   "wpctl"
   "waybar"
