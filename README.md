@@ -1,6 +1,10 @@
-# Bubblegum
-
-Configuration Files For My "Productivity" Boot Of My Desktop PC, Princess Bubblegum
+<div align=center> 
+    <img src="assets/bubblegum.png" width=50%>
+    <br>
+    Configuration Files For My "Productivity" Boot Of My Desktop PC, Princess Bubblegum
+    <br>
+    <br>
+</div>
 
 ## NOTES
 
