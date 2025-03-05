@@ -118,3 +118,6 @@ bind "set menu-complete-display-prefix on"
 
 # change sudo -e editor to nvim
 export EDITOR="/usr/bin/nvim"
+
+# add cargo path 
+export PATH="$PATH:~/.cargo/bin"

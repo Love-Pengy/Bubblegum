@@ -31,6 +31,7 @@ return {
         cmd = "Lushify",
         enabled = false,
       },
+      { 'kosayoda/nvim-lightbulb' },
 
     },
   },

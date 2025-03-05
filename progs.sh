@@ -9,6 +9,7 @@ programs=(
   "hyprland" 
   "hyprlock"
   "hypridle"
+  "wpaperd"
   "playerctl" 
   "wpctl"
   "waybar"
@@ -35,6 +36,7 @@ programs=(
   "curl"
   "obs-studio"
   "dolphin"
+  "cronie"
 
   ##########
   # Extras #
@@ -44,6 +46,7 @@ programs=(
   "yt-dlp" 
   "xdg-desktop-portal-hyprland" 
   "v4l2loopback-dkms" 
+  "qt6-wayland"
   
   ###############
   # Pwogwamming #
@@ -58,5 +61,6 @@ programs=(
   "make" 
   "cmake" 
   "npm"
+  
 
   )

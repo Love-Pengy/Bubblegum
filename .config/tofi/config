@@ -1,4 +1,3 @@
-include=colors-tofi 
 #
 ### Fonts
 #
@@ -8,10 +7,10 @@ include=colors-tofi
 	# characters not in the chosen font will fail to render.
 	#
 	# Otherwise, fonts are interpreted in Pango format.
-	font = $HOME/.local/share/fonts/JetBrainsMonoNLNerdFontMono-Regular.ttf 
+	font = /home/bee/.local/share/fonts/PxPlusIBMVGA8NerdFont-Regular.ttf 
 
 	# Point size of text.
-	font-size = 24
+	font-size = 40
 
 	# Comma separated list of OpenType font feature settings to apply,
 	# if supported by the chosen font. The format is similar to the CSS
@@ -49,7 +48,7 @@ include=colors-tofi
 	prompt-background-corner-radius = 0
 
 	# Placeholder text theme
-	placeholder-color = #FFFFFFA8
+	placeholder-color = #FFFF0F
 	placeholder-background = #00000000
 	placeholder-background-padding = 0
 	placeholder-background-corner-radius = 0
@@ -69,9 +68,10 @@ include=colors-tofi
 	selection-background = #00000000
 	selection-background-padding = 0
 	selection-background-corner-radius = 0
+  selection-color = #33ccffee
 
 	# Matching portion of selection text
-	selection-match-color = #00000000
+	selection-match-color = #0FF000
 
 #
 ### Text layout
@@ -87,7 +87,7 @@ include=colors-tofi
 
 	# Maximum number of results to display.
 	# If 0, tofi will draw as many results as it can fit in the window.
-	num-results = 5
+	num-results = 6 
 
 	# Spacing between results in pixels. Can be negative.
 	result-spacing = 25
@@ -118,7 +118,7 @@ include=colors-tofi
 	border-width = 0
 
 	# Border color
-	border-color = #F92672
+	border-color = #a92672
 
 	# Radius of window corners in pixels.
 	corner-radius = 0
