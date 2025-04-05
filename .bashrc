@@ -121,3 +121,5 @@ export EDITOR="/usr/bin/nvim"
 
 # add cargo path 
 export PATH="$PATH:~/.cargo/bin"
+
+

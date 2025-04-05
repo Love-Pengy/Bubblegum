@@ -8,44 +8,33 @@ set -e
 
 #Include 
 source "progs.sh"
-source "servers.sh"
 
-UHOME=$(getent passwd $SUDO_USER | cut -d: -f6)
-echo $UHOME
-nonRootBash="sudo -u $SUDO_USER bash -c"
-nonRoot="sudo -u $SUDO_USER"
 install="pacman -S --noconfirm -q"
 
 # ####################### #
 # Important Starting Deps # 
 # ####################### #
 
-# Sudo check
-if [[ $EUID > 0 ]]
-  then echo "Please run as root"
-  exit
-fi
-
 # ##### #
 # Setup # 
 # ##### #
 
-pacman -Syu --noconfirm -q
+sudo pacman -Syu --noconfirm -q
 
 # install yay | requires manual password input 
-pacman -S --needed git base-devel 
-$nonRootBash 'cd && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si'
+sudo pacman -S --needed git base-devel 
+cd && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 # My Preferred Folders
-$nonRoot mkdir -p $UHOME/Applications $UHOME/Projects $UHOME/Documents $UHOME/Videos \
-         $UHOME/Downloads 
+mkdir -p $HOME/Applications $HOME/Projects $HOME/Documents $HOME/Videos \
+         $HOME/Downloads 
 
 # ################ #
 # Package Download #
 # ################ #
 
 for package in ${programs[@]}; do 
-  $install $package
+  sudo $install $package
   if [ $? -ne 0 ]; then 
     echo "Package $package Failed"
     exit 1
@@ -53,48 +42,39 @@ for package in ${programs[@]}; do
 done 
 
 # Install Local Send
-$nonRoot yay -S --noconfirm localsend 
+yay -S --noconfirm localsend 
 
 # Install tofi
-$nonRoot yay -S --noconfirm tofi
+yay -S --noconfirm tofi
 
 # Install obs browser support
-$nonRoot yay -S --noconfirm obs-studio-browser
+yay -S --noconfirm obs-studio-browser
 
 # nerdfonts
-$nonRootBash "\
 curl https://api.github.com/repos/ryanoasis/nerd-fonts/tags | grep "tarball_url" | grep -Eo 'https://[^\"]*' | sed  -n '1p' | xargs wget -O - | tar -xz && \
-mkdir -p $UHOME/.local/share/fonts && \
-find ./ryanoasis-nerd-fonts-* -name '*.ttf' -exec mv {} '$UHOME/.local/share/fonts' \;" 
+mkdir -p $HOME/.local/share/fonts && \
+find ./ryanoasis-nerd-fonts-* -name '*.ttf' -exec mv {} $HOME/.local/share/fonts \; 
 rm -rf ./ryanoasis-nerd-fonts-*
 
 # PxPlus font
-$nonRootBash "git clone https://github.com/Love-Pengy/PxPlus_IBM_VGA8_Nerd.git"
-$nonRoot mv ./PxPlus_IBM_VGA8_Nerd/PxPlusIBMVGA8NerdFont-Regular.ttf $UHOME/.local/share/fonts 
+git clone https://github.com/Love-Pengy/PxPlus_IBM_VGA8_Nerd.git
+mv ./PxPlus_IBM_VGA8_Nerd/PxPlusIBMVGA8NerdFont-Regular.ttf $HOME/.local/share/fonts 
 rm -rf PxPlus_IBM_VGA8_Nerd
 
 # obsidian
 flatpak install -y md.obsidian.Obsidian/x86_64/stable
 
 # vesktop
-$nonRoot yay -S --noconfirm vesktop
+yay -S --noconfirm vesktop
 
 # qmk
-$install qmk
-$nonRoot qmk setup -y -H $UHOME/Projects/qmk_firmware
+sudo $install qmk
+setup -y -H $HOME/Projects/qmk_firmware
 
 # ############# #
 # Configuration # 
 # ############# #
 
 # Move dotfiles to their respective places, adopts existing files then overrides them to what they should be 
-$nonRoot stow . --adopt
-$nonRoot git restore .
-
-# install neovim servers
-for server in ${servers[@]}; do 
-  $nonRoot nvim --headless  +"MasonInstall $server" +qa
-done 
-
-
-
+stow . --adopt
+git restore .

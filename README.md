@@ -13,11 +13,6 @@
 +  The cacheAll script will cache all of the wallust colorscheme from these images. This makes it significantly faster to load on startup/sway reload on slower systems. 
 While recommended, it will work just fine without 
 
-### Installation 
-
-+ clone repo `git clone https://github.com/Love-Pengy/Bubblegum.git` 
-+ run script in home directory with sudo privaledges `sudo -H ./install.sh`
-
 ### Ref
 
 + Much of the config derived from: https://github.com/gaurav210233/simple-hyprland
