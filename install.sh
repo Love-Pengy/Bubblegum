@@ -50,6 +50,9 @@ yay -S --noconfirm tofi
 # Install obs browser support
 yay -S --noconfirm obs-studio-browser
 
+# kew (music player)
+yay -S kew
+
 # nerdfonts
 curl https://api.github.com/repos/ryanoasis/nerd-fonts/tags | grep "tarball_url" | grep -Eo 'https://[^\"]*' | sed  -n '1p' | xargs wget -O - | tar -xz && \
 mkdir -p $HOME/.local/share/fonts && \
@@ -63,9 +66,6 @@ rm -rf PxPlus_IBM_VGA8_Nerd
 
 # obsidian
 flatpak install -y md.obsidian.Obsidian/x86_64/stable
-
-# vesktop
-yay -S --noconfirm vesktop
 
 # qmk
 sudo $install qmk

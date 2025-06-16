@@ -20,6 +20,7 @@ programs=(
   "kitty" 
   "hyfetch" 
   "flatpak"  
+  "discord"
 
   #########
   # Utils #
