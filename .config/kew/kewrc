@@ -5,14 +5,14 @@
 [miscellaneous]
 
 path=/home/bee/Music
-version=3.3.4
+version=3.4.0
 allowNotifications=1
 hideLogo=0
 hideHelp=0
-lastVolume=5
+lastVolume=80
 
 # Cache: Set to 1 to use cache of the music library directory tree for faster startup times.
-cacheLibrary=-1
+cacheLibrary=1
 
 # Delay when drawing title in track view, set to 0 to have no delay.
 titleDelay=9
@@ -84,13 +84,13 @@ visualizerBarWidth=2
 #progressBarCurrentOddChar= 
 
 # Current values: 
-
-progressBarElapsedEvenChar=━
-progressBarElapsedOddChar=━
-progressBarApproachingEvenChar=━
-progressBarApproachingOddChar=━
-progressBarCurrentEvenChar=━
-progressBarCurrentOddChar=━
+# grabbed from pacman source
+progressBarElapsedEvenChar= 
+progressBarElapsedOddChar= 
+progressBarApproachingEvenChar=•
+progressBarApproachingOddChar=·
+progressBarCurrentEvenChar=c
+progressBarCurrentOddChar=C
 
 [colors]
 
@@ -164,11 +164,11 @@ quit=q
 altQuit=
 
 # Alt keys for the different main views, normally F2-F7:
-showPlaylistAlt=
-showLibraryAlt=
-showTrackAlt=
-showSearchAlt=
-showKeysAlt=
+showPlaylistAlt=1
+showLibraryAlt=2
+showTrackAlt=3
+showSearchAlt=/
+showKeysAlt=h
 
 # Keys for scrolling page up and page down:
 prevPage=[5~
