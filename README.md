@@ -18,7 +18,6 @@ While recommended, it will work just fine without
 + Much of the config derived from: https://github.com/gaurav210233/simple-hyprland
 + Wallpapers from: 
     https://wallhere.com/en/wallpaper/205045
-    https://wallpapers-clan.com/desktop-wallpapers/princess-bubblegum-adventure-time-2/
     https://wall.alphacoders.com/big.php?i=1361763
     https://wall.alphacoders.com/big.php?i=904596
     https://wall.alphacoders.com/big.php?i=222355
