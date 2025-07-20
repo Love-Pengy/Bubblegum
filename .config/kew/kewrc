@@ -84,7 +84,7 @@ visualizerBarWidth=2
 #progressBarCurrentOddChar= 
 
 # Current values: 
-# grabbed from pacman source
+
 progressBarElapsedEvenChar= 
 progressBarElapsedOddChar= 
 progressBarApproachingEvenChar=•
