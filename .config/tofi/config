@@ -68,7 +68,7 @@
 	selection-background = #00000000
 	selection-background-padding = 0
 	selection-background-corner-radius = 0
-  selection-color = #33ccffee
+    selection-color = #f5b0ef
 
 	# Matching portion of selection text
 	selection-match-color = #0FF000

@@ -122,4 +122,5 @@ export EDITOR="/usr/bin/nvim"
 # add cargo path 
 export PATH="$PATH:~/.cargo/bin"
 
-
+# Require hitting CTRL+d 11 times in order to send EOF
+export IGNOREEOF=10
